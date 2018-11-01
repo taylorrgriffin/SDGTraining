@@ -7,17 +7,16 @@ using System.Threading.Tasks;
 
 namespace PeopleProTraining.Dal.Models
 {
-    [MetadataType(typeof(EmployeeMetaData))]
-    public partial class Employee
+    [MetadataType(typeof(BuildingMetaData))]
+    public partial class Building
     {
     }
-    public class EmployeeMetaData
+    public class BuildingMetaData
     {
-        public int EmployeeID;
+        public int BuildingID;
 
         [Required]
-        public string FirstName;
-        public string LastName;
-        public Department Department; 
+        public string BuildingName;
+        public ICollection<Department> Departments;
     }
 }
