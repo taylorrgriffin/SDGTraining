@@ -1,11 +1,6 @@
 ﻿using PeopleProTraining.Dal.Models;
-using System;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PeopleProTraining.Dal.Models
 {
