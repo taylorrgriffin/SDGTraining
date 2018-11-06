@@ -8,6 +8,8 @@
         <EntityTypeShape EntityType="PeopleProDataBaseModel.Building" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="PeopleProDataBaseModel.Department" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="PeopleProDataBaseModel.Employee" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="PeopleProDataBaseModel.FK_Department_Building" />
+        <AssociationConnector Association="PeopleProDataBaseModel.FK_Employee_Department" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

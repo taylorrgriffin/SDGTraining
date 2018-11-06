@@ -6,6 +6,7 @@
     </Key>
     <Property Name="BuildingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="BuildingName" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Departments" Relationship="PeopleProDataBaseModel.FK_Department_Building" FromRole="Building" ToRole="Department" />
   </EntityType>
   <EntityType Name="Department">
     <Key>
@@ -13,6 +14,9 @@
     </Key>
     <Property Name="DepartmentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="DepartmentName" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Name="BuildingId" Type="Int32" />
+    <NavigationProperty Name="Building" Relationship="PeopleProDataBaseModel.FK_Department_Building" FromRole="Department" ToRole="Building" />
+    <NavigationProperty Name="Employees" Relationship="PeopleProDataBaseModel.FK_Employee_Department" FromRole="Department" ToRole="Employee" />
   </EntityType>
   <EntityType Name="Employee">
     <Key>
@@ -21,10 +25,44 @@
     <Property Name="EmployeeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="LastName" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
     <Property Name="FirstName" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Name="DepartmentId" Type="Int32" />
+    <NavigationProperty Name="Department" Relationship="PeopleProDataBaseModel.FK_Employee_Department" FromRole="Employee" ToRole="Department" />
   </EntityType>
   <EntityContainer Name="PeopleProDataBaseEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Buildings" EntityType="Self.Building" />
     <EntitySet Name="Departments" EntityType="Self.Department" />
     <EntitySet Name="Employees" EntityType="Self.Employee" />
+    <AssociationSet Name="FK_Department_Building" Association="PeopleProDataBaseModel.FK_Department_Building">
+      <End Role="Building" EntitySet="Buildings" />
+      <End Role="Department" EntitySet="Departments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_Department" Association="PeopleProDataBaseModel.FK_Employee_Department">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
   </EntityContainer>
+  <Association Name="FK_Department_Building">
+    <End Type="PeopleProDataBaseModel.Building" Role="Building" Multiplicity="0..1" />
+    <End Type="PeopleProDataBaseModel.Department" Role="Department" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Building">
+        <PropertyRef Name="BuildingId" />
+      </Principal>
+      <Dependent Role="Department">
+        <PropertyRef Name="BuildingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_Department">
+    <End Type="PeopleProDataBaseModel.Department" Role="Department" Multiplicity="0..1" />
+    <End Type="PeopleProDataBaseModel.Employee" Role="Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="DepartmentId" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

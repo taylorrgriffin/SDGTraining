@@ -16,3 +16,8 @@ textarea {
     max-width: 280px;
 }
 
+@media (min-width: 5000px) {
+    .navbar {
+        float: left;
+    }
+}

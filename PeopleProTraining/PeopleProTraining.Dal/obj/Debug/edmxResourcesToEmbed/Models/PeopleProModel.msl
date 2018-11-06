@@ -12,6 +12,7 @@
     <EntitySetMapping Name="Departments">
       <EntityTypeMapping TypeName="PeopleProDataBaseModel.Department">
         <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="BuildingId" ColumnName="BuildingId" />
           <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
           <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
         </MappingFragment>
@@ -20,6 +21,7 @@
     <EntitySetMapping Name="Employees">
       <EntityTypeMapping TypeName="PeopleProDataBaseModel.Employee">
         <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
           <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
           <ScalarProperty Name="LastName" ColumnName="LastName" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />

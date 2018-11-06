@@ -14,7 +14,16 @@ namespace PeopleProTraining.Dal.Models
     
     public partial class Building
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Building()
+        {
+            this.Departments = new HashSet<Department>();
+        }
+    
         public int BuildingId { get; set; }
         public string BuildingName { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Department> Departments { get; set; }
     }
 }
