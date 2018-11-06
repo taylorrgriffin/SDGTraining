@@ -143,6 +143,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="scripts\BuildingAJAX.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
@@ -164,6 +165,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AJAXBuildingController.cs" />
     <Compile Include="Controllers\BuildingController.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
@@ -195,6 +197,11 @@
     <Content Include="Views\Building\Details.cshtml" />
     <Content Include="Views\Building\Edit.cshtml" />
     <Content Include="Views\Building\Index.cshtml" />
+    <Content Include="Views\AJAXBuilding\Create.cshtml" />
+    <Content Include="Views\AJAXBuilding\Delete.cshtml" />
+    <Content Include="Views\AJAXBuilding\Details.cshtml" />
+    <Content Include="Views\AJAXBuilding\Edit.cshtml" />
+    <Content Include="Views\AJAXBuilding\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
