@@ -12,7 +12,7 @@ namespace PeopleProTraining.Controllers
 {
     public class EmployeeController : Controller
     {
-        private Context db = new Context();
+        private PeopleProDataBaseEntities db = new PeopleProDataBaseEntities();
 
         // GET: Employee
         public ActionResult Index()
@@ -46,7 +46,7 @@ namespace PeopleProTraining.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EmployeeID,Id,FirstName,First_Name,LastName")] Employee employee)
+        public ActionResult Create([Bind(Include = "EmployeeId,LastName,FirstName")] Employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace PeopleProTraining.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EmployeeID,Id,FirstName,First_Name,LastName")] Employee employee)
+        public ActionResult Edit([Bind(Include = "EmployeeId,LastName,FirstName")] Employee employee)
         {
             if (ModelState.IsValid)
             {

@@ -13,10 +13,10 @@ namespace PeopleProTraining.Dal.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class PeopleProModelsContainer : DbContext
+    public partial class PeopleProDataBaseEntities : DbContext
     {
-        public PeopleProModelsContainer()
-            : base("name=PeopleProModelsContainer")
+        public PeopleProDataBaseEntities()
+            : base("name=PeopleProDataBaseEntities")
         {
         }
     
@@ -25,6 +25,8 @@ namespace PeopleProTraining.Dal.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Building> Buildings { get; set; }
+        public virtual DbSet<Department> Departments { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
     }
 }

@@ -1,0 +1,12 @@
+C:\Users\griftayl\Documents\Training\SDGTraining\PeopleProTraining\PeopleProTraining.Dal\bin\Debug\PeopleProTraining.Dal.dll.config
+C:\Users\griftayl\Documents\Training\SDGTraining\PeopleProTraining\PeopleProTraining.Dal\bin\Debug\PeopleProTraining.Dal.dll
+C:\Users\griftayl\Documents\Training\SDGTraining\PeopleProTraining\PeopleProTraining.Dal\bin\Debug\PeopleProTraining.Dal.pdb
+C:\Users\griftayl\Documents\Training\SDGTraining\PeopleProTraining\PeopleProTraining.Dal\bin\Debug\EntityFramework.dll
+C:\Users\griftayl\Documents\Training\SDGTraining\PeopleProTraining\PeopleProTraining.Dal\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\griftayl\Documents\Training\SDGTraining\PeopleProTraining\PeopleProTraining.Dal\bin\Debug\EntityFramework.xml
+C:\Users\griftayl\Documents\Training\SDGTraining\PeopleProTraining\PeopleProTraining.Dal\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\griftayl\Documents\Training\SDGTraining\PeopleProTraining\PeopleProTraining.Dal\obj\Debug\PeopleProTraining.Dal.csproj.CoreCompileInputs.cache
+C:\Users\griftayl\Documents\Training\SDGTraining\PeopleProTraining\PeopleProTraining.Dal\obj\Debug\PeopleProTraining.Dal.csproj.CopyComplete
+C:\Users\griftayl\Documents\Training\SDGTraining\PeopleProTraining\PeopleProTraining.Dal\obj\Debug\PeopleProTraining.Dal.dll
+C:\Users\griftayl\Documents\Training\SDGTraining\PeopleProTraining\PeopleProTraining.Dal\obj\Debug\PeopleProTraining.Dal.pdb
+C:\Users\griftayl\Documents\Training\SDGTraining\PeopleProTraining\PeopleProTraining.Dal\obj\Debug\PeopleProTraining.Dal.csprojAssemblyReference.cache
