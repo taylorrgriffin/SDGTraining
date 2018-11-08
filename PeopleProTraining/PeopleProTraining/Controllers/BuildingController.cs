@@ -45,19 +45,15 @@ namespace PeopleProTraining.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        public ActionResult Create(string id)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "BuildingId,BuildingName")] Building id)
         {
-            Building bldg = new Building()
-            {
-                BuildingName = id
-            };
             if (ModelState.IsValid)
             {
-                db.Buildings.Add(bldg);
+                db.Buildings.Add(id);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             return View(id);
         }
 
