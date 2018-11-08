@@ -1,4 +1,9 @@
-﻿function CreateBuildingWithAjax(url) {
+﻿AddAntiForgeryToken = function(data) {
+    data.__RequestVerificationToken = $('#__AjaxAntiForgeryForm input[name=__RequestVerificationToken]').val();
+    return data;
+};
+
+function CreateBuildingWithAjax(url) {
     console.log("Creating with Ajax...")
     var bldg = $('#BuildingName').val();
     $.post(url + "/" + bldg, function ()
@@ -10,15 +15,15 @@
 
 function EditBuildingWithAjax(url) {
     console.log("Saving with Ajax...")
-    var bldgObj =
-    {
-        BuildingId: $('#BuildingId').val(),
-        BuildingName: $('#BuildingName').val()
-    }
-    console.log(bldgObj);
+    var aft = $('input[name="__RequestVerificationToken"]').val();
     $.ajax({
         url: url,
-        data: bldgObj,
+        data:
+        {
+            __RequestVerificationToken: aft,
+            BuildingId: $('#BuildingId').val(),
+            BuildingName: $('#BuildingName').val()
+        } ,
         type: "post",
         datatype: "json",
         success: function () {
