@@ -40,22 +40,25 @@ namespace PeopleProTraining.Controllers
         {
             return View();
         }
-
+        
         // POST: Building/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "BuildingId,BuildingName")] Building building)
+        public ActionResult Create(string id)
         {
+            Building bldg = new Building()
+            {
+                BuildingName = id
+            };
             if (ModelState.IsValid)
             {
-                db.Buildings.Add(building);
+                db.Buildings.Add(bldg);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(building);
+            return View(id);
         }
 
         // GET: Building/Edit/5
@@ -77,16 +80,15 @@ namespace PeopleProTraining.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "BuildingId,BuildingName")] Building building)
+        public ActionResult Edit(String bid)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(building).State = EntityState.Modified;
+                db.Entry(bid).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(building);
+            return View(bid);
         }
 
         // GET: Building/Delete/5
